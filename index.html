@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Recipe book</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	
+	<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>  
+	
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/app.js"></script>
+	
+</head>
+<body>
+	<div data-role="page" id="home">
+	<header data-role="header" data-position="fixed">
+		<h1>Recipe book</h1>	
+	</header>
+	
+	<article data-role="content">
+		<ul data-role="listview" data-iscroll data-filter="true" id="recipelist" data-filter-placeholder="Search recepies...">	
+		</ul>
+	</article>
+
+
+	<footer data-role="footer" data-position="fixed">
+		<nav data-role="navbar">
+			<ul>
+				<li><a href="#home" data-icon="home">Home</a></li>
+				<li><a href="#add" data-icon="plus">Add</a></li>
+				<li><a href="#info" data-icon="info">Info</a></li>
+			</ul>		
+		</nav>	
+	</footer>
+	</div> <!--page-->
+
+	<div data-role="page" id="add" >
+	<header data-role="header" data-position="fixed">
+		<h1>Add a new recepie</h1>	
+		<a href="#home" data-icon="back" data-iconpos="notext">Back</a>
+	</header>
+		
+		<fieldset>
+			<div data-role="fieldcontain" >
+				<input type="text" id="recepieName" required="" placeholder="Recepie name" value="" class="clearable"/>
+				<label for="recepieText">Ingredients and Steps:</label>
+				<textarea cols="40" rows="8" id="recepieText" required="" placeholder="Recepie text" value="" class="clearable"></textarea>	
+				<label for="Upload">Image:</label>
+				<input name="Upload" id="fileUpload" value="" type="file" accept="image/*" required="">		
+				<a href="#" id="addRecepie" data-role="button" data-icon="check" data-iconpos="right" data-theme="a" 					rel="external" >Save</a>
+				<a href="#" id="cancel" data-role="button" data-icon="delete" data-iconpos="right" data-theme="a" 					rel="external">Cancel</a>
+			</div>		
+		</fieldset>
+		
+	<footer data-role="footer" data-position="fixed">
+		<nav data-role="navbar">
+			<ul>
+				<li><a href="#home" data-icon="home">Home</a></li>
+				<li><a href="#add" data-icon="plus">Add</a></li>
+				<li><a href="#info" data-icon="info">Info</a></li>
+			</ul>		
+		</nav>	
+	</footer>
+	</div> <!--page-->
+	
+	<div data-role="page" id="info">
+	<header data-role="header" data-position="fixed">
+		<h1>Recipe book</h1>	
+	</header>
+	
+	<article data-role="content">
+		<p>This app helps users to collect healthy&easy personal recepies. </p>
+	</article>
+
+
+	<footer data-role="footer" data-position="fixed">
+		<nav data-role="navbar">
+			<ul>
+				<li><a href="#home" data-icon="home">Home</a></li>
+				<li><a href="#add" data-icon="plus">Add</a></li>
+				<li><a href="#info" data-icon="info">Info</a></li>
+			</ul>		
+		</nav>	
+	</footer>
+	</div> <!--page-->
+
+</body>
+</html>
